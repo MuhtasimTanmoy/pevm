@@ -5,12 +5,14 @@ edition = "2021"
 
 [features]
 defaults = []
+
 rpc-storage = [
-  "dep:tokio",
-  "dep:reqwest",
   "dep:alloy-transport",
   "dep:alloy-transport-http",
+  "dep:reqwest",
+  "dep:tokio",
 ]
+
 optimism = [
   "revm/optimism",
   "dep:op-alloy-consensus",
@@ -22,9 +24,11 @@ optimism = [
 alloy-chains.workspace = true
 alloy-consensus.workspace = true
 alloy-primitives.workspace = true
+alloy-provider.workspace = true
 alloy-rlp.workspace = true
 alloy-rpc-types.workspace = true
 alloy-trie.workspace = true
+
 bitflags.workspace = true
 bitvec.workspace = true
 dashmap.workspace = true
@@ -36,9 +40,7 @@ thiserror.workspace = true
 
 revm.workspace = true
 
-alloy-provider.workspace = true
-
-# RPC feature dependencies
+# Storage RPC feature dependencies
 alloy-transport = { workspace = true, optional = true }
 alloy-transport-http = { workspace = true, optional = true }
 reqwest = { workspace = true, optional = true }
